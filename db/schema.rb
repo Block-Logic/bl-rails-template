@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_13_123930) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_19_110230) do
+  create_table "opt_out_requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "request_type"
+    t.json "meta_data"
+    t.string "name_encrypted"
+    t.string "street_address_encrypted"
+    t.string "city_encrypted"
+    t.string "postal_code_encrypted"
+    t.string "state_encrypted"
+    t.string "name_encrypted_iv"
+    t.string "street_address_encrypted_iv"
+    t.string "city_encrypted_iv"
+    t.string "postal_code_encrypted_iv"
+    t.string "state_encrypted_iv"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

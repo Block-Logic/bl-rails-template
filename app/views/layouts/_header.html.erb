@@ -1,42 +1,34 @@
-<header class="header">
-  <nav class="navbar">
-    <div class="container mx-auto px-4">
-      <a href="<%= root_path %>" class="navbar-brand">
-        <%= image_tag 'logo.png', alt: t('assets.logo'), title: t('assets.logo'), width: "130" %>
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to edit_user_registration_path, class: "nav-link" do %>
-                Edit Account
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-                Sign Out
-              <% end %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to new_user_session_path, class: "nav-link" do %>
-                Sign In
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to new_user_registration_path, class: "nav-link" do %>
-                Sign Up
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+<header class="bg-slate-300">
+  <div class="container mx-auto p-4 flex flex-row">
+    <a href="<%= root_path %>" class="basis-1/4">
+      <%= image_tag 'logo.png', alt: t('assets.logo'), title: t('assets.logo'), width: "130" %>
+    </a>
+    <div class="basis-3/4">
+      <ul class="float-right">
+        <% if user_signed_in? %>
+          <li class="">
+            <%= link_to edit_user_registration_path, class: "" do %>
+              Edit Account
+            <% end %>
+          </li>
+          <li class="">
+            <%= link_to destroy_user_session_path, method: :delete, class: "" do %>
+              Sign Out
+            <% end %>
+          </li>
+        <% else %>
+          <li class="">
+            <%= link_to new_user_session_path, class: "" do %>
+              Sign In
+            <% end %>
+          </li>
+          <li class="">
+            <%= link_to new_user_registration_path, class: "" do %>
+              Sign Up
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
       </div>
-
-    </div>
-  </nav>
+  </div>
 </header>

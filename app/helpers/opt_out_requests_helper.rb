@@ -1,0 +1,2 @@
+module OptOutRequestsHelper
+end

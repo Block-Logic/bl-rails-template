@@ -69,6 +69,10 @@ gem 'kaminari'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
+gem 'attr_encrypted'
+
+gem 'recaptcha'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
