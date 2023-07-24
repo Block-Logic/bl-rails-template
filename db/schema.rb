@@ -46,8 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_19_110230) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.boolean "admin", default: false, null: false
+    t.boolean "is_admin", default: false, null: false
     t.string "username", null: false
+    t.string "api_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

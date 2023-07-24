@@ -30,9 +30,6 @@ gem "tailwindcss-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
-
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -71,13 +68,15 @@ gem 'wicked_pdf'
 
 gem 'attr_encrypted'
 
-gem 'recaptcha'
+# User browser detection
+gem 'browser'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'pry'
   gem 'rubocop'
+  gem 'faker' #, git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 end
 
 group :development do

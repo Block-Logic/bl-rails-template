@@ -1,48 +1,81 @@
-require "test_helper"
+require 'test_helper'
 
 class OptOutRequestsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @opt_out_request = opt_out_requests(:one)
+    @user = create(:user, :confirmed)
+    @admin = create(:user, :admin, :confirmed)
+    @opt_out_params = {
+      opt_out_request: {
+        name: 'John Doe',
+        request_type: 'optout',
+        street_address: '2575 Pearl St, Ste 230',
+        city: 'Boulder',
+        postal_code: '80302',
+        state: 'CO'
+      }
+    }
+    @opt_out_request = create :opt_out_request
   end
 
-  test "should get index" do
-    get opt_out_requests_url
-    assert_response :success
+  test 'not admin does not get index when non admin is logged in' do
+    sign_in @user
+    get opt_out_requests_path
+    assert_response :redirect
   end
 
-  test "should get new" do
-    get new_opt_out_request_url
-    assert_response :success
-  end
-
-  test "should create opt_out_request" do
-    assert_difference("OptOutRequest.count") do
-      post opt_out_requests_url, params: { opt_out_request: { city_encrypted: @opt_out_request.city_encrypted, city_encrypted_iv: @opt_out_request.city_encrypted_iv, meta_data: @opt_out_request.meta_data, name_encrypted: @opt_out_request.name_encrypted, name_encrypted_iv: @opt_out_request.name_encrypted_iv, postal_code_encrypted: @opt_out_request.postal_code_encrypted, postal_code_encrypted_iv: @opt_out_request.postal_code_encrypted_iv, request_type: @opt_out_request.request_type, state_encrypted: @opt_out_request.state_encrypted, state_encrypted_iv: @opt_out_request.state_encrypted_iv, street_address_encrypted: @opt_out_request.street_address_encrypted, street_address_encrypted_iv: @opt_out_request.street_address_encrypted_iv } }
+  test 'not admin does not delete when non admin is logged in' do
+    sign_in @user
+    assert_no_difference('OptOutRequest.count') do
+      delete opt_out_request_path @opt_out_request
     end
-
-    assert_redirected_to opt_out_request_url(OptOutRequest.last)
+    assert_response :redirect
   end
 
-  test "should show opt_out_request" do
-    get opt_out_request_url(@opt_out_request)
+  test 'admin gets index when admin is logged in' do
+    sign_in @admin
+    get opt_out_requests_path
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_opt_out_request_url(@opt_out_request)
-    assert_response :success
-  end
-
-  test "should update opt_out_request" do
-    patch opt_out_request_url(@opt_out_request), params: { opt_out_request: { city_encrypted: @opt_out_request.city_encrypted, city_encrypted_iv: @opt_out_request.city_encrypted_iv, meta_data: @opt_out_request.meta_data, name_encrypted: @opt_out_request.name_encrypted, name_encrypted_iv: @opt_out_request.name_encrypted_iv, postal_code_encrypted: @opt_out_request.postal_code_encrypted, postal_code_encrypted_iv: @opt_out_request.postal_code_encrypted_iv, request_type: @opt_out_request.request_type, state_encrypted: @opt_out_request.state_encrypted, state_encrypted_iv: @opt_out_request.state_encrypted_iv, street_address_encrypted: @opt_out_request.street_address_encrypted, street_address_encrypted_iv: @opt_out_request.street_address_encrypted_iv } }
-    assert_redirected_to opt_out_request_url(@opt_out_request)
-  end
-
-  test "should destroy opt_out_request" do
-    assert_difference("OptOutRequest.count", -1) do
-      delete opt_out_request_url(@opt_out_request)
+  test 'admin deletes opt-out request' do
+    sign_in @admin
+    assert_difference('OptOutRequest.count', -1) do
+      delete opt_out_request_path @opt_out_request
     end
+    assert_response :redirect
+  end
 
-    assert_redirected_to opt_out_requests_url
+  test 'guest does not get index' do
+    get opt_out_requests_path
+    assert_response :redirect
+  end
+
+  test 'guest does not delete request' do
+    assert_no_difference('OptOutRequest.count') do
+      delete opt_out_request_path @opt_out_request
+    end
+    assert_response :redirect
+  end
+
+  test 'guest gets opt_out form' do
+    get '/opt-out-requests/new'
+    assert_response :success
+  end
+
+  test 'guest creates opt-out request with correct params' do
+    assert_difference('OptOutRequest.count') do
+      post '/opt-out-requests', params: @opt_out_params
+    end
+    assert_response :redirect
+  end
+
+  test 'guest does not create opt-out request with incorrect params' do
+    @opt_out_params[:opt_out_request][:state] = ''
+    assert_no_difference('OptOutRequest.count') do
+      post '/opt-out-requests', params: @opt_out_params
+      assert_response :success
+    end
   end
 end
