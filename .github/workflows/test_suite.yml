@@ -73,15 +73,15 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
-          - name: Create DB
-          env:
-            RAILS_ENV: test
-            DATABASE_HOST: 127.0.0.1
-            DATABASE_PORT: ${{ job.services.mysql.ports[3306] }}
-            DATABASE_USERNAME: root
-            DATABASE_PASSWORD: password
-          run: |
-            bundle exec rails db:prepare
+      - name: Create DB
+        env:
+          RAILS_ENV: test
+          DATABASE_HOST: 127.0.0.1
+          DATABASE_PORT: ${{ job.services.mysql.ports[3306] }}
+          DATABASE_USERNAME: root
+          DATABASE_PASSWORD: password
+        run: |
+          bundle exec rails db:prepare
   
       - name: Run rails tests
         env:
