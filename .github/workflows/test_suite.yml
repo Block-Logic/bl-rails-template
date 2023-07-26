@@ -82,6 +82,11 @@ jobs:
           DATABASE_PASSWORD: password
         run: |
           bundle exec rails db:prepare
+
+      - name: Precompile assets
+        env:
+          RAILS_ENV: test
+        run: bundle exec rails assets:precompile
   
       - name: Run rails tests
         env:
