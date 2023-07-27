@@ -55,11 +55,6 @@ jobs:
           restore-keys: 
             ${{ runner.os }}-gems-
 
-      - name: Decrypt test_key.gpg file
-        run: ./.github/scripts/decrypt_test_key.sh
-        env:
-          TEST_KEY_PASSPHRASE: ${{ secrets.TEST_KEY_PASSPHRASE }}
-
       - name: Bundle install
         env:
           RAILS_ENV: test
@@ -91,6 +86,7 @@ jobs:
       - name: Run rails tests
         env:
           RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           DATABASE_HOST: 127.0.0.1
           DATABASE_PORT: ${{ job.services.mysql.ports[3306] }} # get randomly assigned published port
           DATABASE_USERNAME: root
