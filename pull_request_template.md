@@ -10,7 +10,6 @@
 #### Task completed checklist:
 - [ ] Is there appropriate test coverage?
 - [ ] Did I take into consideration possible security vulnerabilities?
-- [ ] Are the controllers secure?
 - [ ] Was every important matter documented?
 
 #### Things to watch out for
