@@ -6,15 +6,15 @@
 FactoryBot.define do
   factory :user do
     username { Faker::Internet.username(specifier: 8, separators: ["."]) }
-    email { "user@fmatemplate.com" }
+    email { "user@example.com" }
     password { "Password123" }
     api_token { SecureRandom.uuid }
     is_admin { false }
     last_sign_in_at { DateTime.now }
-    
+
 
     trait :admin do
-      email { "adminone@fmatemplate.com" }
+      email { "adminone@example.com" }
       is_admin { true }
     end
 
