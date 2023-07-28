@@ -4,6 +4,7 @@ This repo is a template to be used for creating new projects.
 ## System dependencies                                                                                                                                  
   - Ruby (see .ruby-version)
   - Rails 7.0+
+  - Hotwire (Stimulus+Turbo)
   - MySQL 8+  
   - Redis 6.2+
 
@@ -12,9 +13,6 @@ After creating your new project, you will need to touch some files to customize 
 
 - config/deploy/* to provide the host names for each deployment target.
 - config/deploy.rb to update the project name & other deployment settings.
-- Run `EDITOR=vim rails credentials:edit` to initialize the Rails encrypted credentials files. See config/credentials.example.yml for some of the environment variables that you should copy to 
-config/credentials.yml.enc
-- config/database.yml to reflect the proper database name and other settings. There is an example in `config/database.example.yml`
 - Look at `config/initializers/site_information.rb` and make changes as needed to the constant values shown there.
 - Perform a 'find all' to look for 'fmaprivacy' and 'fmadata'. Modify those values as needed.
 - You will also need to go through the views to remove/change some of the current boiler plate, logo, etc.
@@ -25,12 +23,17 @@ NOTE: If you find other files that need to be touched after creating a new proje
 
 ## Configuration and installation
 
+### Tailwind
+
+In order to use Tailwind make sure to run `bundle exec rails assets:precompile`.
+For development environment use `./bin/dev` instead of `rails s` for running server. It runs both puma and tailwind
+that detects changes to css. 
+
 ### Credentials 
 
 See Keybase for master.key for this project.
 To generate credentials, run:
-  - in atom, use `EDITOR="atom --wait" rails credentials:edit`
-  - in vim use `EDITOR=vim rails credentials:edit`
+  - in vim use `EDITOR=editor_of_your_choice rails credentials:edit`
 Enter your keys, save and exit. See config/credentials.example.yml for examples.
 
 Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
@@ -53,7 +56,7 @@ Attribute encryption on models is required for any attribute that contains perso
 ## Other dependencies 
 
 ### Redis
-in order for Sidekiq to work it requires redis version of at least 6.2 (but since it's deprecated, recommended version is 7)
+in order for Sidekiq to work it requires redis version of at least 6.2.
 
 ## Tests 
 
