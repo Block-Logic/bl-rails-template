@@ -9,7 +9,7 @@ class OptOutRequestsControllerTest < ActionDispatch::IntegrationTest
     @opt_out_params = {
       opt_out_request: {
         name: 'John Doe',
-        request_type: 'optout',
+        request_type: 'opt_out',
         street_address: '2575 Pearl St, Ste 230',
         city: 'Boulder',
         postal_code: '80302',
