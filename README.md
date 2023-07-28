@@ -45,7 +45,7 @@ MySQL 8 is the recommended version to run on your machine. Once you have MySQL r
   `cp config/database.example.yml config/database.yml`
 and configure your config/database.yml to your machine's MySQL configuration. Minor edits should only be necessary.
 
-Run rake db:setup to create and migrate the database from schema (db/schema.rb).
+Run `rails db:setup` to create the database from schema, and seed it with sample data.
 
 ### Attribute Encryption
 Attribute encryption on models is required for any attribute that contains personal information or other sensitive data. The default solution is the attr_encrypted gem.
