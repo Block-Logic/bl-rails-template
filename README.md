@@ -17,41 +17,35 @@ After creating your new project, you will need to touch some files to customize 
 - Perform a 'find all' to look for 'bl_rails_template' mentions. Modify those values as needed.
 - You will also need to go through the views to remove/change some of the current boiler plate, logo, etc.
 - This template is configured for the free version of Sidekiq. Review the Gemfile and config/routes.rb files if you are using Sidekiq Pro.
-- Change the name of the application in `config/application.rb`. Change FMAdataTemplate to something meaningful.
+- Change the name of the application in `config/application.rb`. Change BlRailsTemplate to something meaningful.
 
 NOTE: If you find other files that need to be touched after creating a new project please come back here and update the documentation!
 
 ## Configuration and installation
 
-### Tailwind
-
-In order to use Tailwind make sure to run `bundle exec rails assets:precompile`.
-For development environment use `./bin/dev` instead of `rails s` for running the app. It runs both puma and tailwind
-that detects changes to css. 
-
 ### Credentials 
 
-See Keybase for master.key for this project.
-To generate credentials, run:
-  - in vim use `EDITOR=editor_of_your_choice rails credentials:edit`
-Enter your keys, save and exit. See config/credentials.example.yml for examples.
+See Keybase for master.key and development.key for this project.
+To edit credentials, run:
+  - `EDITOR=editor_of_your_choice rails credentials:edit -e development`
 
-Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
+Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users). 
 
-### Gems
+### Database
 
-Run `bundle install` command to install Rails and all other Gem dependencies. 
-
-### Database creation
-
-MySQL 8 is the recommended version to run on your machine. Once you have MySQL running, run:
-  `cp config/database.example.yml config/database.yml`
+This project uses MySQL as a database. Recommended version is v8. Once you have MySQL installed and running, run:
+  `cp config/database.yml.sample config/database.yml`
 and configure your config/database.yml to your machine's MySQL configuration. Minor edits should only be necessary.
-
-Run rake db:setup to create and migrate the database from schema (db/schema.rb).
 
 ### Attribute Encryption
 Attribute encryption on models is required for any attribute that contains personal information or other sensitive data. The default solution is the attr_encrypted gem.
+
+### Gems
+
+Once you have all configuration files and credential keys in place, run `./bin/setup` to install Rails and all other dependencies. 
+
+### Tailwind
+In development, run your application with `./bin/dev` script, that will run rails server on default port 3000 with `bin/rails server -p 3000` and will compile the assets on the fly with `bin/rails tailwindcss:watch`. 
 
 ## Other dependencies 
 
@@ -61,7 +55,7 @@ in order for Sidekiq to work it requires redis version of at least 6.2.
 ## Tests 
 
 ### How to run the test suite
-run `bundle exec rails assets:precompile` before the first test run
+run `bin/rails tailwindcss:build` before the first test run
 
   `rails test` # run all tests
   `rails test test/models` # run all tests from specific directory
