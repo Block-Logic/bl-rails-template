@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :opt_out_request do
     name { Faker::Name.name[0..15] }
-    request_type { 'optout' }
+    request_type { 'opt_out' }
     street_address { Faker::Address.street_address }
     city { Faker::Address.city }
     postal_code { Faker::Address.postcode }

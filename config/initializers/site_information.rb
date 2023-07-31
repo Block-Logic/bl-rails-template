@@ -15,8 +15,8 @@ OUR_STREET_ADDRESS = '2575 Pearl St, Ste 230'
 OUR_CITY_STATE_ZIP = 'Boulder, CO 80302-3812'
 OUR_FAX = '(303) 443-2073'
 OUR_TELEPHONE = '(303) 443-2070'
-OUR_EMAIL_ADDRESS = 'contact@fma-rails-template.com'
+OUR_EMAIL_ADDRESS = 'contact@bl_rails_template.com'
 
 # Website
-THIS_SITE = 'www.fma-rails-template.com'
-THIS_HOST = 'fma-rails-template.com'
+THIS_SITE = 'www.bl_rails_template.com'
+THIS_HOST = 'bl_rails_template.com'
