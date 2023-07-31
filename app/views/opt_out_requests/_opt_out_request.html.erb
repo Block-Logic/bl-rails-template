@@ -60,8 +60,7 @@
   </p>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this opt out request", opt_out_request, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this opt out request', edit_opt_out_request_path(opt_out_request), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+    <%= link_to "Show this opt out request", opt_out_request, class: "btn-primary" %>
+    <%= link_to 'Edit this opt out request', edit_opt_out_request_path(opt_out_request), class: "btn-secondary" %>
   <% end %>
 </div>
