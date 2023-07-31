@@ -14,7 +14,7 @@ After creating your new project, you will need to touch some files to customize 
 - config/deploy/* to provide the host names for each deployment target.
 - config/deploy.rb to update the project name & other deployment settings.
 - Look at `config/initializers/site_information.rb` and make changes as needed to the constant values shown there.
-- Perform a 'find all' to look for 'fmaprivacy' and 'fmadata'. Modify those values as needed.
+- Perform a 'find all' to look for 'bl_rails_template' mentions. Modify those values as needed.
 - You will also need to go through the views to remove/change some of the current boiler plate, logo, etc.
 - This template is configured for the free version of Sidekiq. Review the Gemfile and config/routes.rb files if you are using Sidekiq Pro.
 - Change the name of the application in `config/application.rb`. Change FMAdataTemplate to something meaningful.
