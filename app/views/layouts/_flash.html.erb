@@ -1,13 +1,20 @@
 <% flash.each do |type, msg| %>
-  <% if flash_message_is_cookie_info(msg) %>
-    <div class="flex flex-row" role="alert">
-      <%= msg %>
-      <%= button_to '', saw_cookie_notice_path, method: :post, class: "btn-close", "data-bs-dismiss": "alert", "aria-label": "Close" %>
+  <% if type == 'cookie_notice' %>
+    <div id="alert-cookie" class="flex items-center p-4 rounded-2xl bg-slate-200 mb-5" role="alert">
+      <div class="text-sm font-medium pr-3">
+        <%= msg %>
+      </div>
+      <div type="button" class="ml-auto" data-dismiss-target="#alert-cookie" aria-label="Close">
+        <%= button_to saw_cookie_notice_path, method: :post do %>
+          <%= image_tag 'close.svg', alt: "X", width: "12"  %>
+        <% end %>
+      </div>
     </div>
   <% else %>
-    <div class="flex flex-row" role="alert">
-      <%= msg %>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div id="alert-1" class="flex items-center p-4 rounded-2xl mb-5 <%= class_for_flash(type) %>" role="alert">
+      <div class="text-sm font-medium">
+        <%= msg %>
+      </div>
     </div>
   <% end %>
 <% end %>
