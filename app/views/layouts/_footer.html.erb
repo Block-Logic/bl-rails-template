@@ -1,64 +1,54 @@
-<footer class="absolute">
-  <div class="fixed bottom-0 w-full">
-    <div class="container mx-auto flex flex-row p-4">
-      <div class="basis-1/4">
-        <div class="text-uppercase fw-bold mb-3"><%= COMPANY_NAME %></div>
-        <p>
-          This is company description.
-        </p>
-        <a href="<%= root_path %>">
-          <%= image_tag 'logo.png', alt: t('assets.logo'), title: t('assets.logo'), class: 'footer-brand', width: "70" %>
-        </a>
-      </div>
+<footer>
+  <!-- Navigation -->
+  <nav class="bg-slate-200 text-sm px-4 py-7">
+    <div class="container mx-auto">
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+        <article class="md:col-span-3 lg:col-span-1 xl:col-span-2">
+          <div class="heading-4 mb-2"><%= COMPANY_NAME %></div>
+          <p class="mb-4">This is company description.</p>
+          <a href="<%= root_path %>">
+            <%= image_tag 'logo.png', alt: "Logo", title: "Logo", width: "70" %>
+          </a>
+        </article>
 
-      <div class="basis-1/4">
-        <div class="text-uppercase fw-bold mb-3">Company</div>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <%= link_to t('footer.nav_links.faq'), faq_path, class: 'nav-link' %>
-          </li>
-        </ul>
-      </div>
+        <article>
+          <div class="heading-4 mb-2">Company</div>
+          <div class="flex flex-col gap-3">
+            <%= link_to "FAQ", faq_path %>
+            <a href="#">Second link</a>
+            <a href="#">Third link</a>
+          </div>
+        </article>
 
-      <div class="basis-1/4">
-        <div class="text-uppercase fw-bold mb-3">Conditions</div>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <%= link_to t('footer.nav_links.terms_of_use'), terms_of_use_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to t('footer.nav_links.privacy_policy'), privacy_policy_path, class: 'nav-link' %>
-          <li class="nav-item">
-            <%= link_to t('footer.nav_links.opt_out'), new_opt_out_request_path, class: 'nav-link' %>
-          </li>
-          <% if user_signed_in? && current_user.is_admin? %>
-            <li class="nav-item">
-              <%= link_to t('footer.nav_links.opt_out_requests'), opt_out_requests_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+        <article>
+          <div class="heading-4 mb-2">Conditions</div>
+          <nav class="flex flex-col gap-3">
+            <%= link_to "Terms of Use", terms_of_use_path %>
+            <%= link_to "Privacy Policy", privacy_policy_path %>
+            <%= link_to "Opt Out", new_opt_out_request_path %>
+            <% if user_signed_in? && current_user.is_admin? %>
+                <%= link_to "Opt Out Requests", opt_out_requests_path %>
+            <% end %>
+          </nav>
+        </article>
 
-      <div class="basis-1/4">
-        <div class="text-uppercase fw-bold mb-3">Contact</div>
-        <p>
-          <i class="fa-solid fa-house me-3"></i><%= OUR_STREET_ADDRESS %><br />
-          <span style="padding-left: 2.1rem;"><%= OUR_CITY_STATE_ZIP %></span>
-        </p>
-        <p>
-          <i class="fa-solid fa-envelope me-3"></i><%= OUR_EMAIL_ADDRESS %>
-        </p>
-        <p>
-          <i class="fa-solid fa-phone me-3"></i><%= OUR_TELEPHONE %>
-        </p>
+        <article>
+          <div class="heading-4 mb-2">Contact</div>
+          <div class="mb-3">
+            <%= OUR_STREET_ADDRESS %><br />
+            <%= OUR_CITY_STATE_ZIP %>
+          </div>
+          <div class="mb-3"><%= OUR_EMAIL_ADDRESS %></div>
+          <div><%= OUR_TELEPHONE %></div>
+        </article>
       </div>
     </div>
+  </nav>
 
-    <!-- Copyright -->
-    <div class="flex flex-row">
-      <div class="w-full text-center p-3">
-        <small>&copy; <%= Date.today.year %>  <%= COMPANY_LLC %></small>
-      </div>
+  <!-- Copyright section -->
+  <section class="bg-slate-300 px-4 py-5">
+    <div class="container mx-auto md:text-center">
+      <div class="heading-4">&copy; <%= Date.today.year %> <%= COMPANY_LLC %></div>
     </div>
-  </div>
+  </section>
 </footer>

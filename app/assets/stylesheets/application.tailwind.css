@@ -12,3 +12,18 @@
     }
 }
 
+/* typography */
+@layer base {
+    .heading-1 {
+        @apply font-semibold text-3xl text-slate-800 mb-2;
+    }
+    .heading-2 {
+        @apply font-semibold text-2xl text-slate-800 mb-1;
+    }
+    .heading-3 {
+        @apply font-semibold text-xl text-slate-800 mb-1;
+    }
+    .heading-4 {
+        @apply font-semibold text-sm leading-6 text-slate-800;
+    }
+}
