@@ -75,6 +75,10 @@
     .label {
         @apply font-semibold text-sm;
     }
+    .label.required:after {
+        @apply ml-1;
+        content: "*";
+    }
     .input {
         @apply bg-white border border-slate-300 text-slate-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
     }
@@ -86,6 +90,34 @@
     }
     .card .input, .card .checkbox, .card .select {
         @apply bg-slate-50;
+    }
+}
+
+/* tables */
+@layer components {
+    .table {
+        @apply border border-slate-200;
+        @apply w-full text-sm text-left;
+    }
+    .table thead {
+        @apply bg-slate-100;
+    }
+    .table thead tr {
+        @apply border border-slate-200;
+    }
+    .table thead th {
+        @apply px-4 py-3;
+        @apply font-semibold text-sm text-slate-800;
+    }
+
+    .table tbody {
+    }
+    .table tbody tr {
+        @apply bg-white hover:bg-slate-50;
+        @apply border border-slate-200;
+    }
+    .table tbody td {
+        @apply px-4 py-3;
     }
 }
 
