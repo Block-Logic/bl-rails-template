@@ -1,5 +1,34 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New opt out request</h1>
+<h2 class="heading-1">Do Not Sell My Personal Information</h2>
+<p class="mb-10">You can exercise your privacy rights with the following options:</p>
 
-  <%= render "form", opt_out_request: @opt_out_request %>
-</div>
+<h3 class="heading-2">1. Web Form</h3>
+<p>Use the form below to send a Privacy Request to <%= THIS_SITE %>.</p>
+
+<%= render "form", opt_out_request: @opt_out_request %>
+
+
+<h3 class="heading-2 mt-10">2. Mail-In Form</h3>
+<p>
+  If you prefer postal mail, you can print this <%= link_to 'Privacy Request Form', new_opt_out_request_path(format: 'pdf') %>
+  and mail it to our Privacy Desk.
+</p>
+
+<hr class="my-10" />
+
+<h3 class="heading-3">Legal Disclosures</h3>
+<p class="mb-3">
+  Depending on your location, you may have the legal right to opt-out of the resale of your personal information,
+  request disclosure of your personal information, or request the deletion of your personal information.
+  See the <%= THIS_HOST %> Privacy Policy at
+  <%= link_to "#{THIS_SITE}/privacy-policy", privacy_policy_path %>
+  for details.
+</p>
+<p class="mb-3">
+  Authorized representatives acting on behalf of a consumer should use the printable
+  <%= link_to 'Privacy Request Form', new_opt_out_request_path(format: 'pdf') %>
+  and include a copy of your signed representation agreement or power-of-attorney.
+</p>
+<p>
+  Consumers with disabilities may use the printable
+  <%= link_to 'Privacy Request Form', new_opt_out_request_path(format: 'pdf') %>.
+</p>
