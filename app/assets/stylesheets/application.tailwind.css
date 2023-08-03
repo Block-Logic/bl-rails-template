@@ -26,9 +26,11 @@
     .heading-4 {
         @apply font-semibold text-sm leading-6 text-slate-800;
     }
+
     a {
         @apply text-blue-500 hover:text-blue-600 hover:cursor-pointer;
     }
+    /* link with page basic color */
     .base-link {
         @apply text-slate-700 hover:text-slate-500;
     }
@@ -63,10 +65,14 @@
 /* cards */
 @layer components {
     .card {
-        @apply bg-white border border-slate-200 rounded-2xl;
+        @apply bg-white border border-slate-200 rounded-2xl overflow-hidden;
     }
     .card-content {
         @apply p-5 sm:p-7 md:p-8;
+    }
+    .card-header, .card-footer {
+        @apply p-5 sm:p-7 md:p-8;
+        @apply bg-slate-50;
     }
 }
 
@@ -99,6 +105,7 @@
         @apply border border-slate-200;
         @apply w-full text-sm text-left;
     }
+    /* table head */
     .table thead {
         @apply bg-slate-100;
     }
@@ -109,9 +116,8 @@
         @apply px-4 py-3;
         @apply font-semibold text-sm text-slate-800;
     }
-
-    .table tbody {
-    }
+    /* table body */
+    .table tbody {}
     .table tbody tr {
         @apply bg-white hover:bg-slate-50;
         @apply border border-slate-200;
