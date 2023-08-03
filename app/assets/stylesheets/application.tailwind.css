@@ -27,3 +27,32 @@
         @apply font-semibold text-sm leading-6 text-slate-800;
     }
 }
+
+/* buttons */
+@layer components {
+    .btn-primary {
+        /* button size: paddings, font size */
+        @apply py-2 px-5 text-base;
+        /* borders, colors */
+        @apply rounded-full bg-blue-500 hover:bg-blue-600 text-slate-50;
+        /* other */
+        @apply transition cursor-pointer inline-block;
+    }
+
+    .btn-secondary {
+        /* button size: paddings, font size */
+        @apply py-2 px-5 text-base;
+        /* borders, colors */
+        @apply rounded-full bg-slate-400 hover:bg-slate-500 text-slate-50;
+        /* other */
+        @apply transition cursor-pointer inline-block;
+    }
+
+    /* use this class to override default size */
+    .btn-sm {
+        @apply py-1 px-4 text-sm;
+    }
+}
+
+@layer utilities {
+}
