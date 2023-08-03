@@ -3,36 +3,36 @@
   <nav class="bg-slate-200 text-sm px-4 py-7">
     <div class="container mx-auto">
       <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-        <article class="md:col-span-3 lg:col-span-1 xl:col-span-2">
+        <div class="md:col-span-3 lg:col-span-1 xl:col-span-2">
           <div class="heading-4 mb-2"><%= COMPANY_NAME %></div>
           <p class="mb-4">This is company description.</p>
           <a href="<%= root_path %>">
             <%= image_tag 'logo.png', alt: "Logo", title: "Logo", width: "70" %>
           </a>
-        </article>
+        </div>
 
-        <article>
+        <div>
           <div class="heading-4 mb-2">Company</div>
           <div class="flex flex-col gap-3">
-            <%= link_to "FAQ", faq_path %>
-            <a href="#">Second link</a>
-            <a href="#">Third link</a>
+            <%= link_to "FAQ", faq_path, class: "base-link" %>
+            <a href="#" class="base-link">Second link</a>
+            <a href="#" class="base-link">Third link</a>
           </div>
-        </article>
+        </div>
 
-        <article>
+        <div>
           <div class="heading-4 mb-2">Conditions</div>
           <nav class="flex flex-col gap-3">
-            <%= link_to "Terms of Use", terms_of_use_path %>
-            <%= link_to "Privacy Policy", privacy_policy_path %>
-            <%= link_to "Opt Out", new_opt_out_request_path %>
+            <%= link_to "Terms of Use", terms_of_use_path, class: "base-link" %>
+            <%= link_to "Privacy Policy", privacy_policy_path, class: "base-link" %>
+            <%= link_to "Opt Out", new_opt_out_request_path, class: "base-link" %>
             <% if user_signed_in? && current_user.is_admin? %>
-                <%= link_to "Opt Out Requests", opt_out_requests_path %>
+                <%= link_to "Opt Out Requests", opt_out_requests_path, class: "base-link" %>
             <% end %>
           </nav>
-        </article>
+        </div>
 
-        <article>
+        <div>
           <div class="heading-4 mb-2">Contact</div>
           <div class="mb-3">
             <%= OUR_STREET_ADDRESS %><br />
@@ -40,7 +40,7 @@
           </div>
           <div class="mb-3"><%= OUR_EMAIL_ADDRESS %></div>
           <div><%= OUR_TELEPHONE %></div>
-        </article>
+        </div>
       </div>
     </div>
   </nav>
