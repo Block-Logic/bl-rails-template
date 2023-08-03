@@ -18,13 +18,16 @@
         @apply font-semibold text-3xl text-slate-800 mb-2;
     }
     .heading-2 {
-        @apply font-semibold text-2xl text-slate-800 mb-1;
+        @apply font-semibold text-2xl text-slate-800 mb-2;
     }
     .heading-3 {
         @apply font-semibold text-xl text-slate-800 mb-1;
     }
     .heading-4 {
         @apply font-semibold text-sm leading-6 text-slate-800;
+    }
+    a {
+        @apply hover:text-blue-600 hover:cursor-pointer;
     }
 }
 
@@ -51,6 +54,29 @@
     /* use this class to override default size */
     .btn-sm {
         @apply py-1 px-4 text-sm;
+    }
+}
+
+/* cards */
+@layer components {
+    .card {
+        @apply bg-white border border-slate-200 rounded-2xl;
+    }
+    .card-content {
+        @apply p-5 sm:p-7 md:p-8;
+    }
+}
+
+/* forms */
+@layer components {
+    .input {
+        @apply bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+    }
+    .checkbox {
+        @apply w-4 h-4 border border-slate-300 bg-slate-50 rounded-full focus:ring-blue-500;
+    }
+    .label {
+        @apply font-semibold text-sm;
     }
 }
 

@@ -2,13 +2,11 @@
   <nav class="container mx-auto">
     <div class="flex flex-wrap items-center justify-between">
 
-      <div class="flex">
+      <div class="flex pr-10">
         <%= link_to root_path do %>
           <h1><%= image_tag 'logo.png', alt: "Logo", title: "Logo", width: "120" %></h1>
         <% end %>
       </div>
-
-      <div class="hidden lg:flex lg:flex-1"></div>
 
       <div data-collapse-toggle="navbar-dropdown" type="button" class="flex lg:hidden cursor-pointer" aria-controls="navbar-dropdown" aria-expanded="false">
         <%= image_tag 'burger.svg', width: "18" %>
