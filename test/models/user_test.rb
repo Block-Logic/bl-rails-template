@@ -10,7 +10,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   describe '.create' do
-    test 'correctly creates user with username, ...' do
+    test 'correctly creates user with username, email and password' do
       assert_difference('User.count') do
         create :user, @user_params
       end
@@ -19,6 +19,18 @@ class UserTest < ActiveSupport::TestCase
       assert_equal user.username, 'test01'
       refute_equal @user_params[:email], user.email_encrypted
       assert_equal user.email_hash, Digest::SHA256.hexdigest(@user_params[:email])
+    end
+
+    test 'does not create user with invalid username' do
+      assert_raises(ActiveRecord::RecordInvalid) do
+        @user_params[:username] = 'test'
+        create :user, @user_params
+      end
+
+      assert_raises(ActiveRecord::RecordInvalid) do
+        @user_params[:username] = 'test' * 14
+        create :user, @user_params
+      end
     end
   end
 
