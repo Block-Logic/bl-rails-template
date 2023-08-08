@@ -17,9 +17,8 @@ class UserTest < ActiveSupport::TestCase
 
       user = User.find_by(username: 'test')
       assert_equal user.username, 'test'
-      # TODO: email encryption
-      # refute_equal @user_params[:email], user.email_encrypted
-      # assert_equal user.email_hash, Digest::SHA256.hexdigest(@user_params[:email])
+      refute_equal @user_params[:email], user.email_encrypted
+      assert_equal user.email_hash, Digest::SHA256.hexdigest(@user_params[:email])
     end
   end
 
