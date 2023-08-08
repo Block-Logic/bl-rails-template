@@ -50,12 +50,12 @@ In development, run your application with `./bin/dev` script, that will run rail
 ## Other dependencies 
 
 ### Redis
-in order for Sidekiq to work it requires redis version of at least 6.2.
+In order for Sidekiq to work it requires redis version of at least 6.2.
 
 ## Tests 
 
 ### How to run the test suite
-run `bin/rails tailwindcss:build` before the first test run
+Run `bin/rails test:prepare` before the first test run.
 
   `rails test` # run all tests
   `rails test test/models` # run all tests from specific directory

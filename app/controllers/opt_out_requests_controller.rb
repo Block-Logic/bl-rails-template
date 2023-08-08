@@ -35,10 +35,10 @@ class OptOutRequestsController < ApplicationController
       )
     )
     if @opt_out_request.save
-      ContactRequestMailer.new_opt_out_request_notice(@opt_out_request.id).deliver_now unless browser.bot?
+      OptOutRequestMailer.new_opt_out_request_notice(@opt_out_request.id).deliver_now unless browser.bot?
       redirect_to thank_you_opt_out_requests_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

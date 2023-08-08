@@ -8,7 +8,7 @@ if Rails.env.development?
     admin.password = 'password'
     admin.password_confirmation = 'password'
   end
-  # admin.confirm
+  admin.confirm
 
   OptOutRequest.create(
     name: 'John Doe',

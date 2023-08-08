@@ -1,67 +1,24 @@
-<div id="<%= dom_id opt_out_request %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Request type:</strong>
+<tr id="<%= dom_id opt_out_request %>">
+  <td>
+    <%= opt_out_request.id %>
+  </td>
+  <td>
     <%= opt_out_request.request_type %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Meta data:</strong>
+  </td>
+  <td>
+    <%= opt_out_request.name %>
+  </td>
+  <td>
+    <%= opt_out_request.street_address %><br />
+    <%= opt_out_request.city %>, <%= opt_out_request.state %> <%= opt_out_request.postal_code %>
+  </td>
+  <td class="text-xs">
     <%= opt_out_request.meta_data %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name encrypted:</strong>
-    <%= opt_out_request.name_encrypted %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Street address encrypted:</strong>
-    <%= opt_out_request.street_address_encrypted %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City encrypted:</strong>
-    <%= opt_out_request.city_encrypted %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Postal code encrypted:</strong>
-    <%= opt_out_request.postal_code_encrypted %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">State encrypted:</strong>
-    <%= opt_out_request.state_encrypted %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name encrypted iv:</strong>
-    <%= opt_out_request.name_encrypted_iv %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Street address encrypted iv:</strong>
-    <%= opt_out_request.street_address_encrypted_iv %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City encrypted iv:</strong>
-    <%= opt_out_request.city_encrypted_iv %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Postal code encrypted iv:</strong>
-    <%= opt_out_request.postal_code_encrypted_iv %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">State encrypted iv:</strong>
-    <%= opt_out_request.state_encrypted_iv %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this opt out request", opt_out_request, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this opt out request', edit_opt_out_request_path(opt_out_request), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+  </td>
+  <td>
+    <%= opt_out_request.created_at %>
+  </td>
+  <td>
+    <%= button_to "X", opt_out_request_path(opt_out_request), form: { data: { turbo_confirm: 'Are you sure?' } }, method: :delete %>
+  </td>
+</tr>

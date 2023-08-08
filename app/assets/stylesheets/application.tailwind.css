@@ -2,12 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+/* general page style */
+@layer base {
+    .body {
+        /* text and background colors */
+        @apply text-slate-700 bg-slate-50;
+        /* font properties */
+        @apply font-sans;
+    }
 }
 
-*/
+/* typography */
+@layer base {
+    .heading-1 {
+        @apply font-semibold text-3xl text-slate-800 mb-2;
+    }
+    .heading-2 {
+        @apply font-semibold text-2xl text-slate-800 mb-2;
+    }
+    .heading-3 {
+        @apply font-semibold text-xl text-slate-800 mb-1;
+    }
+    .heading-4 {
+        @apply font-semibold text-sm leading-6 text-slate-800;
+    }
+
+    a {
+        @apply text-blue-500 hover:text-blue-600 hover:cursor-pointer;
+    }
+    /* link with page basic color */
+    .base-link {
+        @apply text-slate-700 hover:text-slate-500;
+    }
+}
+
+/* buttons */
+@layer components {
+    .btn-primary {
+        /* button size: paddings, font size */
+        @apply py-2 px-5 text-base;
+        /* borders, colors */
+        @apply rounded-full bg-blue-500 hover:bg-blue-600 text-slate-50;
+        /* other */
+        @apply transition cursor-pointer inline-block;
+    }
+
+    .btn-secondary {
+        /* button size: paddings, font size */
+        @apply py-2 px-5 text-base;
+        /* borders, colors */
+        @apply rounded-full bg-slate-400 hover:bg-slate-500 text-slate-50;
+        /* other */
+        @apply transition cursor-pointer inline-block;
+    }
+
+    /* use this class to override default size */
+    .btn-sm {
+        @apply py-1 px-4 text-sm;
+    }
+}
+
+/* cards */
+@layer components {
+    .card {
+        @apply bg-white border border-slate-200 rounded-2xl overflow-hidden;
+    }
+    .card-content {
+        @apply p-5 sm:p-7 md:p-8;
+    }
+    .card-header, .card-footer {
+        @apply p-5 sm:p-7 md:p-8;
+        @apply bg-slate-50;
+    }
+}
+
+/* forms */
+@layer components {
+    .label {
+        @apply font-semibold text-sm;
+    }
+    .label.required:after {
+        @apply ml-1;
+        content: "*";
+    }
+    .input {
+        @apply bg-white border border-slate-300 text-slate-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+    }
+    .select {
+        @apply bg-white border border-slate-300 text-slate-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+    }
+    .checkbox {
+        @apply w-4 h-4 border border-slate-300 bg-white rounded-full focus:ring-blue-500;
+    }
+    .card .input, .card .checkbox, .card .select {
+        @apply bg-slate-50;
+    }
+}
+
+/* tables */
+@layer components {
+    .table {
+        @apply border border-slate-200;
+        @apply w-full text-sm text-left;
+    }
+    /* table head */
+    .table thead {
+        @apply bg-slate-100;
+    }
+    .table thead tr {
+        @apply border border-slate-200;
+    }
+    .table thead th {
+        @apply px-4 py-3;
+        @apply font-semibold text-sm text-slate-800;
+    }
+    /* table body */
+    .table tbody {}
+    .table tbody tr {
+        @apply bg-white hover:bg-slate-50;
+        @apply border border-slate-200;
+    }
+    .table tbody td {
+        @apply px-4 py-3;
+    }
+}
+
+@layer utilities {
+}
