@@ -12,7 +12,7 @@ class User < ApplicationRecord
             presence: true,
             uniqueness: { case_sensitive: false },
             length: { minimum: 5, maximum: 50 },
-            format: { with: USERNAME_REGEXP }
+            format: { with: USERNAME_REGEXP, message: 'can only contain letters, numbers, and periods' }
 
   # For attr_encrypted:
   attr_encrypted_options.merge!(
