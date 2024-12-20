@@ -11,8 +11,3 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
-
-# TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
-ActiveSupport.on_load(:action_mailer) do
-  Rails.application.reload_routes_unless_loaded
-end

@@ -73,6 +73,8 @@ gem 'browser', '~> 6.2.0'
 
 gem 'mutex_m', '~> 0.3.0'
 
+gem 'nkf', '~> 0.2.0'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.4.4'

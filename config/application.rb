@@ -20,3 +20,11 @@ module BlRailsTemplate
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+# TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
+# Starting from Rails 8.0, routes are lazy-loaded by default in test and development environments.
+if Rails.env.development? || Rails.env.test?
+  ActiveSupport.on_load(:action_mailer) do
+    Rails.application.reload_routes_unless_loaded
+  end
+end
