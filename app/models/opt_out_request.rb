@@ -1,5 +1,5 @@
 class OptOutRequest < ApplicationRecord
-  enum request_type: %i[opt_out disclosure deletion]
+  enum :request_type, %i[opt_out disclosure deletion]
 
   validates :request_type, presence: true
   validates :name, presence: true, length: { maximum: 40 }
