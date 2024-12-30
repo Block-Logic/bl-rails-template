@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.6'
+ruby '3.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 8.0.1'
@@ -13,10 +13,10 @@ gem 'sprockets-rails', '~> 3.5.2'
 gem 'mysql2', '~> 0.5.6'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 6.4.2'
+gem 'puma', '~> 6.5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails', '~> 2.0.3'
+gem 'importmap-rails', '~> 2.1.0'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails', '~> 2.0.11'
@@ -25,7 +25,7 @@ gem 'turbo-rails', '~> 2.0.11'
 gem 'stimulus-rails', '~> 1.3.4'
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem 'tailwindcss-rails', '~> 3.0.0'
+gem 'tailwindcss-rails', '~> 3.1.0'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder', '~> 2.13.0'
@@ -90,9 +90,9 @@ group :development do
   gem 'web-console', '~> 4.2.1'
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 4.0.0'
+  gem 'spring', '~> 4.2.1'
   gem 'spring-watcher-listen', '~> 2.1.0'
-  gem 'letter_opener_web', '~> 2.0.0'
+  gem 'letter_opener_web', '~> 3.0.0'
 end
 
 group :test do
