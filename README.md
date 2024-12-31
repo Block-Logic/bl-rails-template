@@ -3,7 +3,7 @@ This repo is a template to be used for creating new projects.
 
 ## System dependencies                                                                                                                                  
   - Ruby (see .ruby-version)
-  - Rails 7.0+
+  - Rails 8.0.1+
   - Hotwire (Stimulus+Turbo)
   - MySQL 8+  
   - Redis 6.2+

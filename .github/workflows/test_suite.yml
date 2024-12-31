@@ -4,10 +4,10 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     services:
       mysql:
-        image: mysql:8.0.33
+        image: mysql:8.0.40
         env:
           MYSQL_ROOT_PASSWORD: password
         ports:
@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
@@ -48,7 +48,7 @@ jobs:
           ruby-version: .ruby-version
 
       - name: Setup cache key and directory for gems cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gem-use-ruby-${{ hashFiles('**/Gemfile.lock') }}
@@ -64,7 +64,7 @@ jobs:
           DATABASE_PASSWORD: password
         run: |
           cp config/database.yml.github-actions config/database.yml
-          gem install bundler --version 2.4.10
+          gem install bundler --version 2.6.1
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
