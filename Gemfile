@@ -25,7 +25,7 @@ gem 'turbo-rails', '~> 2.0.11'
 gem 'stimulus-rails', '~> 1.3.4'
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem 'tailwindcss-rails', '~> 3.1.0'
+gem 'tailwindcss-rails', '~> 3.3.1'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder', '~> 2.13.0'
