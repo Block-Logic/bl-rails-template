@@ -193,6 +193,7 @@ GEM
     net-protocol (0.2.2)
       timeout
     net-smtp (0.5.0)
+      net-protocol
     nio4r (2.7.4)
     nkf (0.2.0)
     nokogiri (1.18.1-arm64-darwin)
@@ -350,6 +351,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
+  arm64-darwin-24
 
 DEPENDENCIES
   attr_encrypted (~> 4.2.0)
@@ -390,7 +392,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6.8)
 
 RUBY VERSION
-   ruby 3.4.1p0
+   ruby 3.4.3p32
 
 BUNDLED WITH
    2.6.2
