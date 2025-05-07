@@ -34,7 +34,7 @@ class OptOutRequestTest < ActiveSupport::TestCase
         @opt_out_request.save
       end
 
-      @opt_out_request.street_address = '2575 Pearl St, Ste 230'
+      @opt_out_request.street_address = '4845 Pearl East Cir Ste 118'
       @opt_out_request.city = ''
       refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
@@ -78,7 +78,7 @@ class OptOutRequestTest < ActiveSupport::TestCase
       opt_out_request = create(
         :opt_out_request,
         name: 'John Doe',
-        street_address: '2575 Pearl St, Ste 230',
+        street_address: '4845 Pearl East Cir Ste 118',
         city: 'Boulder',
         postal_code: '80302',
         state: 'CO'
@@ -86,12 +86,12 @@ class OptOutRequestTest < ActiveSupport::TestCase
       opt_out_request.reload
 
       assert_equal 'John Doe', opt_out_request.name
-      assert_equal '2575 Pearl St, Ste 230', opt_out_request.street_address
+      assert_equal '4845 Pearl East Cir Ste 118', opt_out_request.street_address
       assert_equal 'Boulder', opt_out_request.city
       assert_equal '80302', opt_out_request.postal_code
       assert_equal 'CO', opt_out_request.state
       refute_equal 'John Doe', opt_out_request.name_encrypted
-      refute_equal '2575 Pearl St, Ste 230', opt_out_request.street_address_encrypted
+      refute_equal '4845 Pearl East Cir Ste 118', opt_out_request.street_address_encrypted
       refute_equal 'Boulder', opt_out_request.city_encrypted
       refute_equal '80302', opt_out_request.postal_code_encrypted
       refute_equal 'CO', opt_out_request.state_encrypted

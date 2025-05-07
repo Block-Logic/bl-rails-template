@@ -22,7 +22,7 @@
 
   <div class="mb-3">
     <%= label(:opt_out_request, "Address", nil, class: 'label required') %>
-    <%= f.text_field :street_address, class: 'input', required: true, placeholder: '2575 Pearl St, Ste 230' %>
+    <%= f.text_field :street_address, class: 'input', required: true, placeholder: '4845 Pearl East Cir Ste 118' %>
   </div>
 
   <div class="grid md:grid-cols-4 gap-4 mb-3">
@@ -30,7 +30,7 @@
       <%= f.text_field :city, class: 'input', required: true, placeholder: 'Boulder' %>
     </div>
     <%= f.text_field :state, class: 'input', required: true, placeholder: 'CO' %>
-    <%= f.text_field :postal_code, class: 'input', required: true, placeholder: '80302' %>
+    <%= f.text_field :postal_code, class: 'input', required: true, placeholder: '80301' %>
   </div>
 
   <%= submit_tag "Send", class: 'btn-primary' %>

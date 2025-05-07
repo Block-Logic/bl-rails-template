@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.4.1'
+ruby '3.4.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 8.0.1'
+gem 'rails', '~> 8.0.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails', '~> 3.5.2'
@@ -13,19 +13,19 @@ gem 'sprockets-rails', '~> 3.5.2'
 gem 'mysql2', '~> 0.5.6'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 6.5.0'
+gem 'puma', '~> 6.6.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails', '~> 2.1.0'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails', '~> 2.0.11'
+gem 'turbo-rails', '~> 2.0.13'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails', '~> 1.3.4'
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem 'tailwindcss-rails', '~> 4.0.0'
+gem 'tailwindcss-rails', '~> 4.2.3'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder', '~> 2.13.0'
@@ -48,10 +48,10 @@ gem 'bootsnap', '~> 1.18.4', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem 'image_processing', '~> 1.2'
 
-gem 'redis', '~> 5.3.0'
+gem 'redis', '~> 5.4.0'
 
 # This is for the free version of Sidekiq.
-gem 'sidekiq', '~> 7.3.7'
+gem 'sidekiq', '~> 8.0.3'
 
 # Use this for SideKiq Pro if you have our production keys
 # source 'https://gems.contribsys.com/' do
@@ -66,7 +66,7 @@ gem 'kaminari', '~> 1.2.2'
 gem 'wkhtmltopdf-binary', '~> 0.12.6.8'
 gem 'wicked_pdf', '~> 2.8.2'
 
-gem 'attr_encrypted', '~> 4.1.1'
+gem 'attr_encrypted', '~> 4.2.0'
 
 # User browser detection
 gem 'browser', '~> 6.2.0'
@@ -78,8 +78,8 @@ gem 'nkf', '~> 0.2.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.4.4'
-  gem 'pry', '~> 0.15.0'
-  gem 'rubocop', '~> 1.69.2'
+  gem 'pry', '~> 0.15.2'
+  gem 'rubocop', '~> 1.75.5'
   gem 'faker', '~> 3.5.1'
 end
 
@@ -90,7 +90,7 @@ group :development do
   gem 'web-console', '~> 4.2.1'
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 4.2.1'
+  gem 'spring', '~> 4.3.0'
   gem 'spring-watcher-listen', '~> 2.1.0'
   gem 'letter_opener_web', '~> 3.0.0'
 end

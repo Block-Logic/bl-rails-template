@@ -10,9 +10,9 @@ class OptOutRequestsControllerTest < ActionDispatch::IntegrationTest
       opt_out_request: {
         name: 'John Doe',
         request_type: 'opt_out',
-        street_address: '2575 Pearl St, Ste 230',
+        street_address: '4845 Pearl East Cir Ste 118',
         city: 'Boulder',
-        postal_code: '80302',
+        postal_code: '80301',
         state: 'CO'
       }
     }
